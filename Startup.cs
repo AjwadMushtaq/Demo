@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,7 +17,11 @@ namespace Demo
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+             Configuration = configuration;
+
+            string appVersion = configuration["AppSettings:AppVersion"];
+            Console.WriteLine(appVersion);
+            
         }
 
         public IConfiguration Configuration { get; }

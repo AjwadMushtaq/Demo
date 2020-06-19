@@ -1,7 +1,10 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+
+    ViewData["Title"] = ($"The version of the currently executing assembly is: {GetType().Assembly.GetName().Version}");
+
+
 }
 <h1>@ViewData["Title"]</h1>
 <h1> Initial Commit </h1>
